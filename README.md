@@ -2,7 +2,7 @@
 # <h3 align=left>**`PAULA DAHER`**</h3>
 
 <p align="center">
-<img src="Images\portada.png" height=300>
+<img src="Images\portada.png" height=200>
 </p>
 
 # <h3 align=left>**`DESCRIPCIÓN DEL PROYECTO`**</h3>
@@ -27,7 +27,7 @@ Como data analyst del proyecto, realicé las siguientes tareas:
 - **Notebooks:** 4 Jupyter notebooks para ETL y para el EDA, y otros dos anexos que complementan el EDA (ETL de bases de datos complementarias).
 - **Dashboard.pbix:** Archivo powerBi con el dashboard interactivo
 - **README.md:** Descripción y guía del proyecto.
-
+ 
 -----------------------------------------------------------------------------------------------------
 
 # <h3 align=left>**`TECNOLOGÍA UTILIZADA`**</h3>
@@ -76,7 +76,7 @@ Mediante el análisis de los 6 años comprendidos en el dataset pude observar al
 Dentro de los comportamientos regulares puedo destacar que los meses con más víctimas fatales en la Ciudad de Buenos Aires resultan ser los **últimos meses del año**, y dentro de los atípicos se puede ver que **en el año 2020 baja notablemente el índice de accidentes**. Puede tomarse como una anomalía pero teniendo en cuenta que fue año de lockdown es completamente esperable.
 
 <p align="left">
-<img src="Images\graph1.png" height=300>
+<img src="Images\graph1.png" height=200>
 </p>
 
 Con respecto a las horas y días en que ocurren los siniestros, pude visualizar un dato muy importante: hay una gran **concentración de accidentes los días sábados y domingos por la madrugada**. Este dato me llevó a pensar en la movida nocturna famosa de Buenos Aires, y así es como comencé la recolección de otros dataset complementarios. 
@@ -94,11 +94,17 @@ Otros comportamientos encontrados:
 - Las comunas **1, 4 y 9 componen el top 3** de comunas con más accidentes. 
 - El 71% de accidentes **ocurren en avenidas**.  
 
-**SINIESTROS Y ACUSADOS**
+
+<p align="left">
+<img src="Images\graph3.png" height=200>
+</p>
 
 
 
-**SINIESTROS Y VÍCTIMAS**
+**SINIESTROS, VÍCTIMAS Y ACUSADOS**
+
+
+
 
 
 ## Desarrollo y diseño de dashboard:  
@@ -110,12 +116,14 @@ Debes graficar y medir los 2 KPIs propuestos a continuación, representándolos 
 
 Debes graficar y medir los 2 KPIs propuestos a continuación, representándolos adecuadamente en el dashboard. A su vez, tambíen tienes que proponer, medir y graficar un tercer KPI que consideres relevante para la temática. 
 Los dos KPIs propuestos son:
-- *Reducir en un 10% la tasa de homicidios en siniestros viales de los últimos seis meses, en CABA, en comparación con la tasa de homicidios en siniestros viales del semestre anterior*. 
-- *Reducir en un 7% la cantidad de accidentes mortales de motociclistas en el último año, en CABA, respecto al año anterior*.
+- Reducir en un 10% la tasa de homicidios en siniestros viales de los últimos seis meses, en CABA, en comparación con la tasa de homicidios en siniestros viales del semestre anterior. 
+- Reducir en un 7% la cantidad de accidentes mortales de motociclistas en el último año, en CABA, respecto al año anterior.
+
+- Y un tercer kpi propuesto por mi para seguir ocn el análisis de los accidentes fatales de noche: Reducir en un 10% la cantidad de accidentes mortales que se producen de madrugada en el último año, respecto al año anterior.
   
      
 <p align="left">
-<img src="Images\kpis.png" height=300>
+<img src="Images\kpis.png" height=250>
 </p>
 
 
