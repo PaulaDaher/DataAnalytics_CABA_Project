@@ -1,4 +1,5 @@
-# <h1 align=left> DATA ANALYTICS OPERATIONS </h1>
+
+# <h1 align=left> PROYECTO DE DATA ANALYTICS PARA LA CIUDAD DE BUENOS AIRES</h1>
 # <h3 align=left>**`PAULA DAHER`**</h3>
 
 <p align="center">
@@ -68,7 +69,7 @@ Realicé un análisis exploratorio de los datos para entender mejor las relacion
 Realicé gráficos coherentes según la tipología de la variable, los cuales me fueron brindando información valiosa para entender los comportamientos.
 Todo el proceso se puede observar en el siguiente notebook: [EDA_PI2](https://github.com/PaulaDaher/Proyecto_DataAnalytics_CABA/blob/main/EDA_PI2.ipynb)
 
-Fué escencial cruzar el dato más importante con el que contábamos (**cantidad de víctimas fatales: 715 en 6 años sólo en CABA**) con distintos factores como el paso del tiempo, las comunas de la ciudad de Buenos Aires, y datos de víctimas y acusados.
+Fué escencial cruzar el dato más importante con el que contábamos (**cantidad de víctimas: 715 en 6 años sólo en CABA**) con distintos factores como el paso del tiempo, las comunas de la ciudad de Buenos Aires, y datos de víctimas y acusados.
 
 **SINIESTROS Y EL TIEMPO**   
 
@@ -88,6 +89,11 @@ Quise analizar los permisos de eventos masivos en la Ciudad pero el dataset enco
 Sin olvidar el patrón encontrado en el punto anterior y queriendo investigar un poco más sobre la movida nocturna, analicé un segundo data set complementario que contiene registros de locales bailables de cada comuna de CABA. Para esto, extraje la información, realicé el ETL pertinente y comencé a cruzazr datos de lugares donde se concentran la mayor cantidad de siniestros los fines de semana con las comunas dónde hay más movimiento nocturno. Como era de esperar este analisis me brindó información nueva que me permitió obtener nuevas conclusiones.
 Podemos decir que **la comuna 1 (barrioss: Constitución - Monserrat - Puerto Madero - Retiro - San Nicolás - San Telmo) es la comuna con más accidentes fatales y la comuna con más movida nocturna**. 
 
+<p align="left">
+<img src="Images\graph5.png" height=300>
+</p>
+
+
 En el siguiente link se encuentran los ETL realizados tanto al dataset de locales bailables como a un tercet dataset que utilicé para conocer más en profundidad los barrios y comunas de CABA: [anexo_II_comunas](https://github.com/PaulaDaher/Proyecto_DataAnalytics_CABA/blob/main/anexo_II_comunas.ipynb)
 
 Otros comportamientos encontrados: 
@@ -95,33 +101,32 @@ Otros comportamientos encontrados:
 - El 71% de accidentes **ocurren en avenidas**.  
 
 
-<p align="left">
-<img src="Images\graph3.png" height=200>
-</p>
-
-
-
 **SINIESTROS, VÍCTIMAS Y ACUSADOS**
 
+Relacionando los accidentes viales con los implicados en los accidente (víctima y acusado) he podiro analizar métricas y comportamientos que sirven de input para la futura toma de decisiones. 
+Pude observar que las víctimas son principalmente **peatones y conductores/acompañantes de motos de sexo masculino** y que la gran mayoría de acusados de los siniestros son **conductores de automóviles**
+También pude observar que el rango de edad con más frecuencia entre las víctimas es de **20 a 40 años**, y que los accidentes más frecuentes se dan entre **moto y auto** y **peaton y colectivo**  
 
+<p align="left">
+<img src="Images\graph4.png" height=200>
+</p>
 
+## Diseño y creación del dashboard:  
 
+Creé un dashboard interactivo en **PowerBi** mostrando todo el análisis realizado a través de gráficos pertinentes y coherentes para que sea sensilla la interpretación de los datos. Incluyte filtros permitiendo explorar detalladamente los datos con la selección de cada uno de ellos, incluye también tooltips para complementar la informacón y diversas pestañas que permiten navegar a través de estas tres secciones detalladas anteriormente.  
 
-## Desarrollo y diseño de dashboard:  
-
-Creación de dashboard en PowerBi Debe ser funcional y coherente con el storytelling. El dasbhoard tiene que incluir **filtros**, permitiendo explorar detalladamente los datos con la selección de cada uno de ellos. Es decir, es indispensable que sea **interactivo**. También, se espera que el diseño que implementen facilite la interpretación de la información y su análisis, siendo importante, para ello, la claridad en la presentación de los datos, aspectos inherentes a la esteticidad, elección coherente de los gráficos según las variables a visualizar, entre otros ítems. 
-Debes graficar y medir los 2 KPIs propuestos a continuación, representándolos adecuadamente en el dashboard. A su vez, tambíen tienes que proponer, medir y graficar un tercer KPI que consideres relevante para la temática. 
 
 ## Desarrollo de KPIs:  
 
-Debes graficar y medir los 2 KPIs propuestos a continuación, representándolos adecuadamente en el dashboard. A su vez, tambíen tienes que proponer, medir y graficar un tercer KPI que consideres relevante para la temática. 
-Los dos KPIs propuestos son:
+Una de los desafíos planteados en el proyecto era la medición de 2 KPI planteados por la Ciudad de Buenos Aires, para poder medir de forma certera si los objetivos planteados fueron alcanzados. En este caso los dos KPI propuestos eran:
 - Reducir en un 10% la tasa de homicidios en siniestros viales de los últimos seis meses, en CABA, en comparación con la tasa de homicidios en siniestros viales del semestre anterior. 
 - Reducir en un 7% la cantidad de accidentes mortales de motociclistas en el último año, en CABA, respecto al año anterior.
 
-- Y un tercer kpi propuesto por mi para seguir ocn el análisis de los accidentes fatales de noche: Reducir en un 10% la cantidad de accidentes mortales que se producen de madrugada en el último año, respecto al año anterior.
+A estos dos KPIs le sumé uno planteado por mi que es necesario calcularlo para continuar con el análisis de los accidentes en horas de madrugada: 
+- Reducir en un 10% la cantidad de accidentes mortales que se producen de madrugada en el último año, respecto al año anterior.
   
-     
+Podemos observar que el objetivo planteado en el KPI 2, en el año 2021, no se cumplió, a diferencia del objetivo en el KPI3 que si se cumplió ya que se logró disminuir en el 2021 más del 10% de los accidentes de madrugada     
+
 <p align="left">
 <img src="Images\kpis.png" height=250>
 </p>
