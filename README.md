@@ -1,9 +1,8 @@
-
 # <h1 align=left> DATA ANALYTICS OPERATIONS </h1>
 # <h3 align=left>**`PAULA DAHER`**</h3>
 
 <p align="center">
-<img src="image.png" height=300>
+<img src="Images\portada.png" height=300>
 </p>
 
 # <h3 align=left>**`DESCRIPCIÓN DEL PROYECTO`**</h3>
@@ -19,18 +18,6 @@ Como data analyst del proyecto, realicé las siguientes tareas:
 - Identifiqué patrones, tendencias y relaciones dentro de los datos. (INFORMACIÓN)
 - Visualización de Datos: Creé un dashboard con gráficos, tablas y otros tipos de visualizaciones para representar los datos de manera comprensible. (INFORMACIÓN)
 - Conclusiones: Interpreté los resultados del análisis y saqué algunas conclusiones para que los interesados puedan tomar medidas acertadas. (CONOCIMIENTO)
-
-
-### El proyecto lo dividí en dos partes:
-
-**Parte I:** ETL / EDA
-Se empieza desde cero, haciendo un trabajo rápido de Data Engineer con la recolección y extracción de datos de archivos, así como sus tratamiento, transformación y modelado. 
-En esta línea, hay varios aspectos indispensables que **deben** ser abordados en cualquier Análisis Exploratorio de Datos y tomaremos como punto de partida para evaluar tu performance en este apartado. Entre estos aspectos destacados se encuentran: *búsqueda de valores faltantes, valores atípicos/extremos u outliers y registros duplicados*. Asimismo, la utilización de gráficos coherentes según la tipología de variable que corresponda resulta esencial.
-
-**Parte II:** Creación de dashboard en PowerBi / análisis de KPIs
-Se crea el modelo, se consumen los datos ya limpios, y se entrenar bajo ciertas condiciones. Como resultado se crea un sistema de recomendación de videojuegos para usuarios de Steam, utilizando técnicas de MLOps para asegurar que el modelo y la API sean escalables, reproducibles y mantenibles.
-Debe ser funcional y coherente con el storytelling. El dasbhoard tiene que incluir **filtros**, permitiendo explorar detalladamente los datos con la selección de cada uno de ellos. Es decir, es indispensable que sea **interactivo**. También, se espera que el diseño que implementen facilite la interpretación de la información y su análisis, siendo importante, para ello, la claridad en la presentación de los datos, aspectos inherentes a la esteticidad, elección coherente de los gráficos según las variables a visualizar, entre otros ítems. 
-Debes graficar y medir los 2 KPIs propuestos a continuación, representándolos adecuadamente en el dashboard. A su vez, tambíen tienes que proponer, medir y graficar un tercer KPI que consideres relevante para la temática. 
 
 
 -----------------------------------------------------------------------------------------------------
@@ -71,38 +58,69 @@ Debes graficar y medir los 2 KPIs propuestos a continuación, representándolos 
 
 
 # <h3 align=left>**`PASOS REALIZADOS`**</h3>
-1. Transformaciones de Datos:  
-Se realizó la lectura de los dataset en el formato correcto, se realiza la limpieza y preprocesamiento de los datos de las bases sobre las cuales se trabajó. 
-Se eliminaron columnas innecesarias, se imputaron valores nulos y datos anidados entre otras cosas.   
+## Transformaciones de Datos:  
+Realicé la lectura de los dataset en el formato correcto, como así también la limpieza y preprocesamiento de los datos de las bases sobre las cuales trabajé posteriormente. 
+Eliminé columnas innecesarias, imputé valores nulos y analicé valores atípicos, entre otros procedimientos.  
 Las transformaciones se encuentran asentadas en el notebook [ETL_PI2](https://github.com/PaulaDaher/Proyecto_DataAnalytics_CABA/blob/main/ETL_PI2.ipynb)
 
-2. Análisis Exploratorio de Datos (EDA):  
-Se realizó un análisis exploratorio de los datos para entender mejor las relaciones entre las variables, detectar outliers y patrones interesantes.
+## Análisis Exploratorio de Datos:
+Realicé un análisis exploratorio de los datos para entender mejor las relaciones entre las variables, detectar comportamiento y patrones interesantes que nos sirvan para poder tomar futuras decisiones.
+Realicé gráficos coherentes según la tipología de la variable, los cuales me fueron brindando información valiosa para entender los comportamientos.
+Todo el proceso se puede observar en el siguiente notebook: [EDA_PI2](https://github.com/PaulaDaher/Proyecto_DataAnalytics_CABA/blob/main/EDA_PI2.ipynb)
+
+Fué escencial cruzar el dato más importante con el que contábamos (**cantidad de víctimas fatales: 715 en 6 años sólo en CABA**) con distintos factores como el paso del tiempo, las comunas de la ciudad de Buenos Aires, y datos de víctimas y acusados.
+
+**SINIESTROS Y EL TIEMPO**   
+
+Mediante el análisis de los 6 años comprendidos en el dataset pude observar algunos comportamientos regulares y otros atípicos. 
+Dentro de los comportamientos regulares puedo destacar que los meses con más víctimas fatales en la Ciudad de Buenos Aires resultan ser los **últimos meses del año**, y dentro de los atípicos se puede ver que **en el año 2020 baja notablemente el índice de accidentes**. Puede tomarse como una anomalía pero teniendo en cuenta que fue año de lockdown es completamente esperable.
+
+<p align="left">
+<img src="Images\graph1.png" height=300>
+</p>
+
+Con respecto a las horas y días en que ocurren los siniestros, pude visualizar un dato muy importante: hay una gran **concentración de accidentes los días sábados y domingos por la madrugada**. Este dato me llevó a pensar en la movida nocturna famosa de Buenos Aires, y así es como comencé la recolección de otros dataset complementarios. 
+Quise analizar los permisos de eventos masivos en la Ciudad pero el dataset encontrado era muy escaso (solo con registros del 2019). [anexo_I_eventos](https://github.com/PaulaDaher/Proyecto_DataAnalytics_CABA/blob/main/anexo_I_eventos.ipynb)
 
 
-- Cruce de datos con datasets complementarios, ya sea para obtener información nueva o poder comparar la información disponible para todas las plataformas. 
+**SINIESTROS Y LAS COMUNAS**
+
+Sin olvidar el patrón encontrado en el punto anterior y queriendo investigar un poco más sobre la movida nocturna, analicé un segundo data set complementario que contiene registros de locales bailables de cada comuna de CABA. Para esto, extraje la información, realicé el ETL pertinente y comencé a cruzazr datos de lugares donde se concentran la mayor cantidad de siniestros los fines de semana con las comunas dónde hay más movimiento nocturno. Como era de esperar este analisis me brindó información nueva que me permitió obtener nuevas conclusiones.
+Podemos decir que **la comuna 1 (barrioss: Constitución - Monserrat - Puerto Madero - Retiro - San Nicolás - San Telmo) es la comuna con más accidentes fatales y la comuna con más movida nocturna**. 
+
+En el siguiente link se encuentran los ETL realizados tanto al dataset de locales bailables como a un tercet dataset que utilicé para conocer más en profundidad los barrios y comunas de CABA: [anexo_II_comunas](https://github.com/PaulaDaher/Proyecto_DataAnalytics_CABA/blob/main/anexo_II_comunas.ipynb)
+
+Otros comportamientos encontrados: 
+- Las comunas **1, 4 y 9 componen el top 3** de comunas con más accidentes. 
+- El 71% de accidentes **ocurren en avenidas**.  
+
+**SINIESTROS Y ACUSADOS**
 
 
-3. Desarrollo y diseño de dashboard:  
-Se desarrolló un sistema de recomendación basado en la similitud del coseno:
- - Input: ID de un producto.
- - Output: Lista de 5 juegos recomendados similares al ingresado.
+
+**SINIESTROS Y VÍCTIMAS**
 
 
+## Desarrollo y diseño de dashboard:  
 
+Creación de dashboard en PowerBi Debe ser funcional y coherente con el storytelling. El dasbhoard tiene que incluir **filtros**, permitiendo explorar detalladamente los datos con la selección de cada uno de ellos. Es decir, es indispensable que sea **interactivo**. También, se espera que el diseño que implementen facilite la interpretación de la información y su análisis, siendo importante, para ello, la claridad en la presentación de los datos, aspectos inherentes a la esteticidad, elección coherente de los gráficos según las variables a visualizar, entre otros ítems. 
+Debes graficar y medir los 2 KPIs propuestos a continuación, representándolos adecuadamente en el dashboard. A su vez, tambíen tienes que proponer, medir y graficar un tercer KPI que consideres relevante para la temática. 
 
-4. Desarrollo de KPIs:  
-Se implementaron los siguientes endpoints en la API utilizando FastAPI:
- - **developer(desarrollador: str):** Cantidad de items y porcentaje de contenido Free por año según empresa desarrolladora.
- - **userdata(User_id: str):** Cantidad de dinero gastado por el usuario, porcentaje de recomendación y cantidad de items.
- - **UserForGenre(genero: str):** Usuario con más horas jugadas para el género dado y acumulación de horas jugadas por año de lanzamiento.
- - **best_developer_year(año: int):** Top 3 de desarrolladores con juegos más recomendados por usuarios para el año dado.
- - **developer_reviews_analysis(desarrolladora: str):** Análisis de reseñas de usuarios categorizados con análisis de sentimiento (positivo o negativo).
- - **recomendacion_juego(id de producto: str):** Lista de 5 juegos recomendados similares al ingresado.
+## Desarrollo de KPIs:  
+
+Debes graficar y medir los 2 KPIs propuestos a continuación, representándolos adecuadamente en el dashboard. A su vez, tambíen tienes que proponer, medir y graficar un tercer KPI que consideres relevante para la temática. 
+Los dos KPIs propuestos son:
+- *Reducir en un 10% la tasa de homicidios en siniestros viales de los últimos seis meses, en CABA, en comparación con la tasa de homicidios en siniestros viales del semestre anterior*. 
+- *Reducir en un 7% la cantidad de accidentes mortales de motociclistas en el último año, en CABA, respecto al año anterior*.
+  
+     
+<p align="left">
+<img src="Images\kpis.png" height=300>
+</p>
+
 
 
 # <h3 align=left>**`CONCLUSIONES`**</h3>
-
 - A través de este análisis exploratorio de los datos he podido observar como se comportan los registros de accidentes fatales en la Ciudad de Buenos Aires. 
 - Puedo obtener como conclusión que los meses con más accidentes son los meses festivos, en dónde la población sale más de sus hogares y hay más actividades en la ciudad. Sin embargo las muertes por accidentes viales se registran a lo largo de todo el año, debiendo tomar medidas urgentes para bajar este índice. Observando también una baja en el número de accidentes fatales en el año 2020 disminuyó abruptamente debido al lockdown. 
 - Observé a través del cruce de métricas que hay una gran concentración de accidentes fatales los fines de semana en la madrugada en comunas específicas, comunas que contienen mayor densidad de bares y locales bailables, por lo que se llama a una toma de medidas urgentes en cuanto a los controles de alcoholemia. 
