@@ -1,5 +1,5 @@
 
-# <h1 align=left> PROYECTO DE DATA ANALYTICS PARA LA CIUDAD DE BUENOS AIRES</h1>
+# <h1 align=left> DATA ANALYTICS OPERATIONS </h1>
 # <h3 align=left>**`PAULA DAHER`**</h3>
 
 <p align="center">
@@ -25,7 +25,7 @@ Como data analyst del proyecto, realicé las siguientes tareas:
 
 # <h3 align=left>**`ESTRUCTURA DEL PROYECTO`**</h3>
 - **Data:.csv** En el repositorio se encuentran los archivos .csv que se recibieron (DB_seed), los archivos con un ETL aplicado (_ETL) y los archivos csv complementarios que se utilizaron para darle más profundidad al EDA.
-- **Notebooks:** 4 Jupyter notebooks para ETL y para el EDA, y otros dos anexos que complementan el EDA (ETL de bases de datos complementarias).
+- **Notebooks:** el repositirio contiene 4 Jupyter notebooks, uno para el ETL y otra para el EDA, y otros dos anexos que complementan el EDA (ETL de bases de datos complementarias).
 - **Dashboard.pbix:** Archivo powerBi con el dashboard interactivo
 - **README.md:** Descripción y guía del proyecto.
  
@@ -71,28 +71,29 @@ Todo el proceso se puede observar en el siguiente notebook: [EDA_PI2](https://gi
 
 Fué escencial cruzar el dato más importante con el que contábamos (**cantidad de víctimas: 715 en 6 años sólo en CABA**) con distintos factores como el paso del tiempo, las comunas de la ciudad de Buenos Aires, y datos de víctimas y acusados.
 
+
+
 **SINIESTROS Y EL TIEMPO**   
 
 Mediante el análisis de los 6 años comprendidos en el dataset pude observar algunos comportamientos regulares y otros atípicos. 
 Dentro de los comportamientos regulares puedo destacar que los meses con más víctimas fatales en la Ciudad de Buenos Aires resultan ser los **últimos meses del año**, y dentro de los atípicos se puede ver que **en el año 2020 baja notablemente el índice de accidentes**. Puede tomarse como una anomalía pero teniendo en cuenta que fue año de lockdown es completamente esperable.
 
-<p align="left">
-<img src="Images\graph1.png" height=200>
-</p>
-
 Con respecto a las horas y días en que ocurren los siniestros, pude visualizar un dato muy importante: hay una gran **concentración de accidentes los días sábados y domingos por la madrugada**. Este dato me llevó a pensar en la movida nocturna famosa de Buenos Aires, y así es como comencé la recolección de otros dataset complementarios. 
-Quise analizar los permisos de eventos masivos en la Ciudad pero el dataset encontrado era muy escaso (solo con registros del 2019). [anexo_I_eventos](https://github.com/PaulaDaher/Proyecto_DataAnalytics_CABA/blob/main/anexo_I_eventos.ipynb)
+Quise analizar en un primer momento los permisos de eventos masivos en la Ciudad pero el dataset encontrado era muy escaso (solo con registros del 2019). [anexo_I_eventos](https://github.com/PaulaDaher/Proyecto_DataAnalytics_CABA/blob/main/anexo_I_eventos.ipynb)
+
+<p align="left">
+<img src="Images\gif1.gif" height=300>
+</p>
 
 
 **SINIESTROS Y LAS COMUNAS**
 
-Sin olvidar el patrón encontrado en el punto anterior y queriendo investigar un poco más sobre la movida nocturna, analicé un segundo data set complementario que contiene registros de locales bailables de cada comuna de CABA. Para esto, extraje la información, realicé el ETL pertinente y comencé a cruzazr datos de lugares donde se concentran la mayor cantidad de siniestros los fines de semana con las comunas dónde hay más movimiento nocturno. Como era de esperar este analisis me brindó información nueva que me permitió obtener nuevas conclusiones.
+Sin olvidar el patrón encontrado en el punto anterior y queriendo investigar un poco más sobre la movida nocturna, analicé un segundo data set complementario que contiene registros de locales bailables de cada comuna de CABA. Para esto, extraje la información, realicé el ETL pertinente y comencé a cruzazr datos de los lugares donde se concentran la mayor cantidad de siniestros los fines de semana con las comunas dónde hay más movimiento nocturno. Como era de esperar este analisis me brindó información nueva que me permitió obtener nuevas conclusiones.
 Podemos decir que **la comuna 1 (barrioss: Constitución - Monserrat - Puerto Madero - Retiro - San Nicolás - San Telmo) es la comuna con más accidentes fatales y la comuna con más movida nocturna**. 
 
 <p align="left">
 <img src="Images\graph5.png" height=300>
 </p>
-
 
 En el siguiente link se encuentran los ETL realizados tanto al dataset de locales bailables como a un tercet dataset que utilicé para conocer más en profundidad los barrios y comunas de CABA: [anexo_II_comunas](https://github.com/PaulaDaher/Proyecto_DataAnalytics_CABA/blob/main/anexo_II_comunas.ipynb)
 
@@ -100,12 +101,18 @@ Otros comportamientos encontrados:
 - Las comunas **1, 4 y 9 componen el top 3** de comunas con más accidentes. 
 - El 71% de accidentes **ocurren en avenidas**.  
 
+    
+
+<p align="left">
+<img src="Images\gif2.gif" height=300>
+</p>
+
 
 **SINIESTROS, VÍCTIMAS Y ACUSADOS**
 
-Relacionando los accidentes viales con los implicados en los accidente (víctima y acusado) he podiro analizar métricas y comportamientos que sirven de input para la futura toma de decisiones. 
-Pude observar que las víctimas son principalmente **peatones y conductores/acompañantes de motos de sexo masculino** y que la gran mayoría de acusados de los siniestros son **conductores de automóviles**
-También pude observar que el rango de edad con más frecuencia entre las víctimas es de **20 a 40 años**, y que los accidentes más frecuentes se dan entre **moto y auto** y **peaton y colectivo**  
+Relacionando los accidentes viales con los implicados en los accidente (víctima y acusado) he podiro analizar métricas y comportamientos que sirven de input para la futura toma de decisiones:
+- Pude observar que las víctimas son principalmente **peatones y conductores/acompañantes de motos de sexo masculino** y que la gran mayoría de acusados de los siniestros son **conductores de automóviles**
+- También pude observar que el rango de edad con más frecuencia entre las víctimas es de **20 a 40 años**, y que los accidentes más frecuentes se dan entre **moto y auto** y **peaton y colectivo**  
 
 <p align="left">
 <img src="Images\graph4.png" height=200>
@@ -113,7 +120,15 @@ También pude observar que el rango de edad con más frecuencia entre las vícti
 
 ## Diseño y creación del dashboard:  
 
-Creé un dashboard interactivo en **PowerBi** mostrando todo el análisis realizado a través de gráficos pertinentes y coherentes para que sea sensilla la interpretación de los datos. Incluyte filtros permitiendo explorar detalladamente los datos con la selección de cada uno de ellos, incluye también tooltips para complementar la informacón y diversas pestañas que permiten navegar a través de estas tres secciones detalladas anteriormente.  
+Creé un dashboard interactivo en **PowerBi** mostrando todo el análisis realizado a través de gráficos pertinentes y coherentes para que sea sensilla la interpretación de los datos. Incluye:
+- filtros permitiendo explorar detalladamente los datos con la selección de cada uno de ellos
+- tooltips para complementar la informacón
+- Análisis de Kpi
+- diversas pestañas que permiten navegar a través de estas tres secciones detalladas anteriormente.  
+
+<p align="left">
+<img src="Images\gif3.gif" height=300>
+</p>
 
 
 ## Desarrollo de KPIs:  
@@ -130,7 +145,6 @@ Podemos observar que el objetivo planteado en el KPI 2, en el año 2021, no se c
 <p align="left">
 <img src="Images\kpis.png" height=250>
 </p>
-
 
 
 # <h3 align=left>**`CONCLUSIONES`**</h3>
